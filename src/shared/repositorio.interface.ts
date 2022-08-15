@@ -4,4 +4,7 @@ export interface IRepositorio<T extends EntidadeBase> {
   inserir(registro: T): void;
 
   selecionarTodos(): T[];
+
+  excluir(id:string):void;
+
 }
