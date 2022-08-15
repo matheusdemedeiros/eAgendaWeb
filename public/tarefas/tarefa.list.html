@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script type="module" src="./dist/index.js" defer></script>
-    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,12 +17,20 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>eAgenda Web</title>n
+    <script
+      type="module"
+      src="../../dist/tarefas/tarefa.list.js"
+      defer
+    ></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Tarefas - eAgenda</title>
   </head>
   <body class="bg-dark">
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark my-2">
       <div class="container">
-        <a class="navbar-brand" href="./index.html">eAgenda</a>
+        <a class="navbar-brand" href="../../index.html">eAgenda</a>
         <span class="badge bg-warning text-bg-light">web</span>
 
         <button
@@ -51,7 +57,9 @@
                 Cadastros
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./public/tarefas/tarefa.list.html">Tarefas</a></li>
+                <li>
+                  <a class="dropdown-item" href="./tarefa.list.html">Tarefas</a>
+                </li>
                 <li><a class="dropdown-item" href="#">Contatos</a></li>
                 <li><a class="dropdown-item" href="#">Compromissos</a></li>
               </ul>
@@ -61,37 +69,41 @@
       </div>
     </nav>
 
-    <main class="container mt-4 text-bg-dark">
-      <section id="introducao">
-        <div class="text-center tex-md-start">
-          <div
-            class="row-cols-1 row-cols-md-2 d-flex flex-wrap-reverse align-items-center"
-          >
-            <div class="col mt-4 mt-md-0">
-              <header>
-                <h1 clsas="fv-bolder">Olá, seja bem-vindo(a)</h1>
-                <h2 class="text-warning fs-3">
-                  A aplicação web do eAgenda está aqui!
-                </h2>
-                <hr />
-              </header>
-              <article>
-                <p class="fs-5">
-                  Nossa aplicação oferece simplicidade na hora de gerenciar suas
-                  tarefas.
-                </p>
-                <p class="fs-5">Que tal começar cadastrando uma nova tarefa?</p>
-                <a
-                  id="btnCadastro"
-                  href="./public/tarefas/tarefa.list.html"
-                  class="btn btn-lg btn-primary"
-                  >Cadastro de tarefas</a
-                >
-              </article>
+    <main class="container mt-2">
+      <div class="text-center text-md-start p-0p-md-5">
+        <section id="cabecalho">
+          <header>
+            <h1 class="title text-light fw-bold">Tarefas</h1>
+            <p class="fs-5 mt-3 text-warning fw-semibold">
+              Cadastre suas tarefas diárias por prioridade.
+            </p>
+            <a href="./tarefa.create.html" class="btn btn-primary px-5"
+              >Nova tarefa</a
+            >
+          </header>
+        </section>
+
+        <section id="tabela">
+          <div class="card text-bg-dark border-secondary mt-4">
+            <div class="card-body">
+              <table
+                id="tabela"
+                class="table table-dark table-hover text-center"
+              >
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Descrição</th>
+                    <th>Prioridade</th>
+                    <th>Data de criação</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider"></tbody>
+              </table>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   </body>
 </html>
