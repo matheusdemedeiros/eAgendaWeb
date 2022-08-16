@@ -1,7 +1,3 @@
-
-export interface IPaginaListagem{
-  atualizarTabela():void;
-
-  obterIdSelecionadoTabela():string;
-
+export interface IPaginaListagem {
+  atualizarTabela(): void;
 }

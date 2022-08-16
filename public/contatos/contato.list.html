@@ -19,13 +19,13 @@
 
     <script
       type="module"
-      src="../../dist/tarefas/tarefa.list.js"
+      src="../../dist/contatos/contato.list.js"
       defer
     ></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Tarefas - eAgenda</title>
+    <title>Contatos - eAgenda</title>
   </head>
   <body class="bg-dark">
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark my-2">
@@ -58,9 +58,9 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="./tarefa.list.html">Tarefas</a>
+                  <a class="dropdown-item" href="../tarefas/tarefa.list.html">Tarefas</a>
                 </li>
-                <li><a class="dropdown-item" href="../contatos/contato.list.html">Contatos</a></li>
+                <li><a class="dropdown-item" href="./contato.list.html">Contatos</a></li>
                 <li><a class="dropdown-item" href="#">Compromissos</a></li>
               </ul>
             </li>
@@ -73,12 +73,12 @@
       <div class="text-center text-md-start p-0p-md-5">
         <section id="cabecalho">
           <header>
-            <h1 class="title text-light fw-bold">Tarefas</h1>
+            <h1 class="title text-light fw-bold">Contatos</h1>
             <p class="fs-5 mt-3 text-warning fw-semibold">
-              Cadastre suas tarefas diárias por prioridade.
+              Cadastre seus contatos aqui.
             </p>
-            <a href="./tarefa.create.html" class="btn btn-primary px-5"
-              >Nova tarefa</a
+            <a href="./contato.create.html" class="btn btn-primary px-5"
+              >Novo contato</a
             >
           </header>
         </section>
@@ -93,9 +93,11 @@
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th>Descrição</th>
-                    <th>Prioridade</th>
-                    <th>Data de criação</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Empresa</th>
+                    <th>Cargo</th>
                     <th></th>
                     <th></th>
                   </tr>

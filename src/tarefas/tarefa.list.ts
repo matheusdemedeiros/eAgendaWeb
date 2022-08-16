@@ -12,12 +12,7 @@ class TarefaPageList implements IPaginaHTML, IPaginaListagem {
     this.atualizarTabela();
   }
   
-  obterIdSelecionadoTabela(): string {
-    const linhas = this.tabela.rows;
-
-    alert("teste");
-    return "teste";
-  }
+ 
   configurarElementos(): void {
     this.tabela = document.getElementById("tabela") as HTMLTableElement;
   }
@@ -73,9 +68,6 @@ class TarefaPageList implements IPaginaHTML, IPaginaListagem {
       celulaBotaoExcluir.appendChild(botaoExcluir);
     });
   }
-
-
-  
 
   private shortDateString(data:Date) {
     return new Date(data).toLocaleDateString('pt-BR', {

@@ -19,11 +19,11 @@
 
     <script
       type="module"
-      src="../../dist/tarefas/tarefa.create.js"
+      src="../../dist/contatos/contato.create.js"
       defer
     ></script>
 
-    <title>Tarefas - eAgenda</title>
+    <title>Contatos - eAgenda</title>
   </head>
   <body class="bg-dark">
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark my-2">
@@ -58,7 +58,11 @@
                 <li>
                   <a class="dropdown-item" href="./tarefa.list.html">Tarefas</a>
                 </li>
-                <li><a class="dropdown-item" href="../contatos/contato.list.html">Contatos</a></li>
+                <li>
+                  <a class="dropdown-item" href="./contato.list.html"
+                    >Contatos</a
+                  >
+                </li>
                 <li><a class="dropdown-item" href="#">Compromissos</a></li>
               </ul>
             </li>
@@ -71,9 +75,9 @@
       <div class="text-center text-md-start p-0p-md-5">
         <section id="cabecalho">
           <header>
-            <h1 class="title text-light fw-bold">Cadastrar Tarefa</h1>
+            <h1 class="title text-light fw-bold">Cadastrar Contato</h1>
             <p class="fs-5 mt-3 text-warning fw-semibold">
-              Cadastre suas tarefas diárias por prioridade.
+              Cadastre seus contatos aqui.
             </p>
           </header>
 
@@ -83,59 +87,55 @@
             <div class="card-body p-5">
               <form class="form text-bg-dark mt-3" id="formulario">
                 <div class="form-group mt-4">
-                  <label class="form-label fs-5" for="txtDescricao"
-                    >Descrição</label
-                  >
+                  <label class="form-label fs-5" for="txtNome">Nome</label>
                   <input
-                    id="txtDescricao"
+                    id="txtNome"
                     type="text"
                     class="form-control"
-                    placeholder="Descrição da tarefa"
+                    placeholder="Nome do contato"
+                  />
+                </div>
+                <div class="form-group mt-4">
+                  <label class="form-label fs-5" for="txtEmail">E-mail</label>
+                  <input
+                    id="txtEmail"
+                    type="text"
+                    class="form-control"
+                    placeholder="E-mail do contato"
+                  />
+                </div>
+                <div class="form-group mt-4">
+                  <label class="form-label fs-5" for="txtTelefone"
+                    >Telefone</label
+                  >
+                  <input
+                    id="txtTelefone"
+                    type="text"
+                    class="form-control"
+                    placeholder="Telefone do contato"
                   />
                 </div>
 
                 <div class="form-group mt-4">
-                  <label class="form-label fs-5" for="rdbPrioridade"
-                    >Prioridade</label
+                  <label class="form-label fs-5" for="txtEmpresa"
+                    >Empresa</label
                   >
 
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      value="Baixa"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault1"
-                      type="radio"
-                      checked
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1"
-                      >Baixa</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      value="Média"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault2"
-                      type="radio"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault2"
-                      >Média</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      value="Alta"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault3"
-                      type="radio"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault3"
-                      >Alta</label
-                    >
-                  </div>
+                  <input
+                    id="txtEmpresa"
+                    type="text"
+                    class="form-control"
+                    placeholder="Empresa do contato"
+                  />
+                </div>
+                <div class="form-group mt-4">
+                  <label class="form-label fs-5" for="txtCargo">Cargo</label>
+                  <input
+                    id="txtCargo"
+                    type="text"
+                    class="form-control"
+                    placeholder="Cargo do contato"
+                  />
                 </div>
               </form>
               <div class="card-footer px-3 text-center text-md-end">
