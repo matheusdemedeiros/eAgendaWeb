@@ -1,9 +1,17 @@
 import { EntidadeBase } from "../shared/entidadeBase.model.js";
 export class Tarefa extends EntidadeBase {
-    constructor(descricao, prioridade) {
+    constructor(descricao, prioridade, id, dataCriacao) {
         super();
+        if (id) {
+            this.id = id;
+        }
         this.descricao = descricao;
         this.prioridade = prioridade;
-        this.dataCriacao = new Date();
+        if (dataCriacao) {
+            this.dataCriacao = dataCriacao;
+        }
+        else {
+            this.dataCriacao = new Date();
+        }
     }
 }

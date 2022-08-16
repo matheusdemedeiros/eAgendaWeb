@@ -11,6 +11,17 @@ export class TarefaRepositorioLocalStorage {
         this.tarefas.push(registro);
         this.gravar();
     }
+    editar(id, tarefa) {
+        let registro = this.selecionarPorId(id);
+        if (registro) {
+            registro.id = tarefa.id;
+            registro.dataCriacao = tarefa.dataCriacao;
+            registro.dataConclusao = tarefa.dataConclusao;
+            registro.prioridade = tarefa.prioridade;
+            registro.descricao = tarefa.descricao;
+            this.gravar();
+        }
+    }
     selecionarTodos() {
         const dados = this.localStorage.getItem("tarefas");
         if (!dados) {
@@ -29,5 +40,8 @@ export class TarefaRepositorioLocalStorage {
         }
         this.tarefas.splice(index, 1);
         this.gravar();
+    }
+    selecionarPorId(id) {
+        return this.tarefas.find((x) => x.id === id);
     }
 }

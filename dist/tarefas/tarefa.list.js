@@ -30,11 +30,11 @@ class TarefaPageList {
             celulaDataCriacao.innerText = dataFormatada;
             let celulaBotaoEditar = novaLinha.insertCell();
             let botaoEditar = document.createElement("button");
-            botaoEditar.classList.add("btn");
-            botaoEditar.classList.add("btn-info");
+            botaoEditar.className = "btn btn-info";
             botaoEditar.innerText = "Editar";
             botaoEditar.addEventListener("click", () => {
-                window.location.href = "tarefa.edit.html?tarefa-id=" + tarefa.id;
+                const idSelecionado = novaLinha.cells[0].innerText;
+                window.location.href = "tarefa.create.html?id=" + idSelecionado;
             });
             celulaBotaoEditar.appendChild(botaoEditar);
             let celulaBotaoExcluir = novaLinha.insertCell();
@@ -42,9 +42,10 @@ class TarefaPageList {
             botaoExcluir.classList.add("btn");
             botaoExcluir.classList.add("btn-danger");
             botaoExcluir.innerText = "Excluir";
-            botaoExcluir.addEventListener("click", (_ctx) => {
-                this.repositorioTarefas.excluir(tarefa.id);
-                //window.location.reload();
+            botaoExcluir.addEventListener("click", () => {
+                const idSelecionado = novaLinha.cells[0].innerText;
+                this.repositorioTarefas.excluir(idSelecionado);
+                window.location.reload();
             });
             celulaBotaoExcluir.appendChild(botaoExcluir);
         });

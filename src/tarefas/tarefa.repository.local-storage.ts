@@ -12,6 +12,7 @@ export class TarefaRepositorioLocalStorage
     this.localStorage = window.localStorage;
     this.tarefas = this.selecionarTodos();
   }
+
   public gravar(): void {
     const tarefasJsonString = JSON.stringify(this.tarefas);
     this.localStorage.setItem("tarefas", tarefasJsonString);
@@ -20,6 +21,18 @@ export class TarefaRepositorioLocalStorage
   inserir(registro: Tarefa): void {
     this.tarefas.push(registro);
     this.gravar();
+  }
+
+  editar(id: string, tarefa: Tarefa): void {
+    let registro = this.selecionarPorId(id);
+    if (registro) {
+      registro.id = tarefa.id;
+      registro.dataCriacao = tarefa.dataCriacao;
+      registro.dataConclusao = tarefa.dataConclusao;
+      registro.prioridade = tarefa.prioridade;
+      registro.descricao = tarefa.descricao;
+      this.gravar();
+    }
   }
 
   selecionarTodos(): Tarefa[] {
@@ -43,5 +56,9 @@ export class TarefaRepositorioLocalStorage
     }
     this.tarefas.splice(index, 1);
     this.gravar();
+  }
+
+  selecionarPorId(id: string): Tarefa | undefined {
+    return this.tarefas.find((x) => x.id === id);
   }
 }

@@ -5,6 +5,9 @@ export interface IRepositorio<T extends EntidadeBase> {
 
   selecionarTodos(): T[];
 
-  excluir(id:string):void;
+  selecionarPorId(id: string): T | undefined;
 
+  excluir(id: string): void;
+
+  editar(id: string, registro:T): void;
 }
