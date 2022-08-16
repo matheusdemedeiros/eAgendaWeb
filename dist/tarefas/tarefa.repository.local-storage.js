@@ -30,15 +30,15 @@ export class TarefaRepositorioLocalStorage {
         return JSON.parse(dados);
     }
     excluir(id) {
-        // let index = this.tarefas.findIndex((tarefa:Tarefa) => {tarefa.id === id});
-        let index = -1;
-        for (let i = 0; i < this.tarefas.length; i++) {
-            if (this.tarefas[i].id === id) {
-                index = i;
-                break;
-            }
-        }
-        this.tarefas.splice(index, 1);
+        this.tarefas = this.tarefas.filter(x => x.id != id);
+        // let index = -1;
+        // for (let i = 0; i < this.tarefas.length; i++) {
+        //   if (this.tarefas[i].id === id) {
+        //     index = i;
+        //     break;
+        //   }
+        // }
+        // this.tarefas.splice(index, 1);
         this.gravar();
     }
     selecionarPorId(id) {

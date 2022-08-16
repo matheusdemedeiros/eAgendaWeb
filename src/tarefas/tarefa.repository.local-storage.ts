@@ -6,7 +6,7 @@ export class TarefaRepositorioLocalStorage
   implements IRepositorio<Tarefa>, IRepositorioSerializavel
 {
   private readonly localStorage: Storage;
-  private readonly tarefas: Tarefa[];
+  private  tarefas: Tarefa[];
 
   constructor() {
     this.localStorage = window.localStorage;
@@ -46,15 +46,16 @@ export class TarefaRepositorioLocalStorage
   }
 
   excluir(id: string) {
-    // let index = this.tarefas.findIndex((tarefa:Tarefa) => {tarefa.id === id});
-    let index = -1;
-    for (let i = 0; i < this.tarefas.length; i++) {
-      if (this.tarefas[i].id === id) {
-        index = i;
-        break;
-      }
-    }
-    this.tarefas.splice(index, 1);
+    this.tarefas = this.tarefas.filter(x=> x.id != id);
+
+    // let index = -1;
+    // for (let i = 0; i < this.tarefas.length; i++) {
+    //   if (this.tarefas[i].id === id) {
+    //     index = i;
+    //     break;
+    //   }
+    // }
+    // this.tarefas.splice(index, 1);
     this.gravar();
   }
 
